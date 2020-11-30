@@ -66,7 +66,7 @@ export const logoutOperation = () => async (dispatch) => {
 export const getCurrentUserOperation = (persistedToken) => async (dispatch) => {
   try {
     token.set(persistedToken);
-    const result = await axios.get("/users/current");
+    const result = await axios.get("/users/current")
     dispatch(getCurrentUserSuccess(result.data));
   } catch (error) {
     dispatch(getCurrentUserError(error));
