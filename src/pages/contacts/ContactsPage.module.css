@@ -1,0 +1,7 @@
+.link{
+    color: darkslateblue;
+    font-weight: 800;
+  }
+  .link:hover{
+    color:rgb(240, 105, 127)
+  }
