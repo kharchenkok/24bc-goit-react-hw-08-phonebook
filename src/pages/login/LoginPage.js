@@ -1,15 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector} from "react-redux";
 import { NavLink } from "react-router-dom";
 import { loginOperation } from "../../redux/operations/authOperations";
 import { navigation } from "../../routes/constans";
 import style from "./LoginPage.module.css";
+import {getAuthError} from '../../redux/selectors/authSelectors'
+import { resetAuthError } from "../../redux/slice/users/authErrorSlice";
+import Error from '../../component/error/Error'
 
 const initialState = {
   email: "",
   password: "",
 };
 const LoginPage = () => {
+  const authUserError=useSelector(state=>getAuthError(state))
   const [logForm, setLogForm] = useState(initialState);
   const dispatch = useDispatch();
 
@@ -19,13 +23,15 @@ const LoginPage = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(logForm);
     dispatch(loginOperation(logForm));
     setLogForm(initialState);
+    setTimeout(() => dispatch(resetAuthError()), 2000)
   };
   return (
     <div>
+    
       <h2 className={style.login__title}>Login</h2>
+      {authUserError&& <Error/>}
       <form onSubmit={handleSubmit} className={style.login__form}>
         <input
           onChange={handleChange}
@@ -53,6 +59,7 @@ const LoginPage = () => {
           Sign up
         </NavLink>{" "}
       </p>
+      
     </div>
   );
 };

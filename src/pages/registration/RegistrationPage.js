@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { registerOperation } from "../../redux/operations/authOperations";
+import { getAuthError } from "../../redux/selectors/authSelectors";
+import { resetAuthError } from "../../redux/slice/users/authErrorSlice";
 import { navigation } from "../../routes/constans";
 import style from "./RegistrationPage.module.css";
+import Error from '../../component/error/Error'
+
 
 const initialState = {
   name: "",
@@ -12,6 +16,7 @@ const initialState = {
 };
 
 const RegistrationPage = () => {
+  const authUserError=useSelector(state=>getAuthError(state))
   const [regForm, setRegForm] = useState(initialState);
   const dispatch = useDispatch();
 
@@ -24,10 +29,12 @@ const RegistrationPage = () => {
     // console.log(regForm);
     dispatch(registerOperation(regForm));
     setRegForm(initialState);
+    setTimeout(() => dispatch(resetAuthError()), 2000)
   };
   return (
     <div>
       <h2 className={style.registration__title}>Registration</h2>
+      {authUserError&& <Error/>}
       <form onSubmit={handleSubmit} className={style.registration__form}>
         <input
           onChange={handleChange}

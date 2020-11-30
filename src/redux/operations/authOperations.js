@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setContacts } from "../slice/contacts/contactsSlice";
 
 import {
   loginError,
@@ -58,6 +59,7 @@ export const logoutOperation = () => async (dispatch) => {
     token.unset();
     dispatch(logoutTokenSuccess());
     dispatch(userlogoutSuccess());
+    dispatch(setContacts([]))
   } catch (error) {
     dispatch(logoutError(error));
   }

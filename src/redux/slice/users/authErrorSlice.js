@@ -17,10 +17,13 @@ const authErrorSlice = createSlice({
     getCurrentUserError(state, action) {
       return action.payload;
     },
+    resetAuthError(state,action){
+      return initialState
+    }
   },
 });
 
 const { actions, reducer } = authErrorSlice;
-export const { registerError, loginError, logoutError,getCurrentUserError } = actions;
+export const { registerError, loginError, logoutError,getCurrentUserError,resetAuthError } = actions;
 
 export default reducer;
