@@ -1,0 +1,32 @@
+.login__form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+  }
+  .login__form_input {
+    display: block;
+    margin-bottom: 30px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .login__form_button {
+    padding: 10px;
+    font-size: 20px;
+  }
+
+
+.login__title {
+    color: darkslateblue;
+    font-weight: 800;
+    font-size: 25px;
+    text-align: center;
+  }
+  .link{
+    color: darkslateblue;
+    font-weight: 800;
+  }
+  .link:hover{
+    color:rgb(240, 105, 127)
+  }

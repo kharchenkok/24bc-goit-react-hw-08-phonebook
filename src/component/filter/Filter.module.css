@@ -1,0 +1,26 @@
+.input__style {
+  border: 2px solid rgb(133, 15, 70);
+  height: 30px;
+  margin-right: 10px;
+  max-width: 300px;
+  margin-top: 10px;
+}
+.phonebook_titleContact {
+  color: darkslateblue;
+  font-weight: 800;
+  font-size: 28px;
+  text-decoration: underline;
+  text-align: center;
+}
+.lable__style{
+  font-style: italic;
+  margin: 0;
+}
+.form__find{
+  display: flex;
+  justify-content:center;
+  align-items: flex-end
+}
+.search{
+  color:red
+}

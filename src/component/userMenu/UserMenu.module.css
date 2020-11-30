@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+   
+  }
+
+  .name{
+    font-weight: 700;
+    margin-right: 10px;
+    color: white;
+
+  }
+  .avatar{
+    margin-right: 4px,
+  }

@@ -1,0 +1,25 @@
+.header {
+    background-color:darkslateblue;;
+   display: flex;
+   justify-content: space-between;
+  }
+  .nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  max-width: 400px;
+  margin-right: 20px;
+  }
+  .nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 5px;
+  }
+  .hidden{
+      display: none;
+  }
+  .active{
+      color: rgb(219, 45, 74);
+  }
